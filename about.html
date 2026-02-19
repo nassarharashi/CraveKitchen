@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — CraveKitchen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+              400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              800: '#9a3412', 900: '#7c2d12',
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    html { scroll-behavior: smooth; }
+    * { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+  </style>
+</head>
+<body class="text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
+    <nav class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+        <span class="text-brand-600 text-3xl">🍽</span>
+        <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
+      </a>
+      <button id="darkToggle" class="md:hidden absolute right-16 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+      <button class="md:hidden p-2 rounded border border-slate-300 dark:border-slate-600" id="navToggle">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <ul class="hidden md:flex items-center gap-6">
+        <li><a class="hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-600 font-medium text-brand-600" href="about.html">About</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li>
+          <button id="darkToggleDesktop" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+            <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+        </li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </nav>
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+      <ul class="container py-4 grid gap-3">
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 w-max hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <nav class="bg-slate-50 border-b border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+    <ol class="container max-w-7xl flex items-center gap-2 py-3 text-sm">
+      <li><a class="text-slate-500 hover:text-brand-600 transition" href="index.html">Home</a></li>
+      <li class="text-slate-400">/</li>
+      <li class="text-slate-800 dark:text-white font-medium">About Us</li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ==================== ABOUT HERO ==================== -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10"></div>
+      <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600" alt="Restaurant ambiance">
+      <div class="container max-w-7xl relative z-20 py-24 md:py-32 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white font-display">About CraveKitchen</h1>
+        <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">Established in 2010. 120 seats. 80+ menu items. Open 7 days a week.</p>
+      </div>
+    </section>
+
+    <!-- ==================== COMPANY INTRO ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Who We Are</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Who We Are</h2>
+          <div class="mt-6 space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p>CraveKitchen opened in 2010 as a 30-seat bistro downtown. Today we operate a 120-seat restaurant with a full bar, private dining room, and outdoor terrace. Our kitchen serves Mediterranean, Asian, and American dishes using ingredients sourced from local farms.</p>
+            <p>We offer dine-in, takeout, and delivery. Our private room fits up to 40 guests for birthdays, corporate events, and family gatherings. We also run a weekend brunch buffet every Saturday and Sunday from 10am to 2pm.</p>
+          </div>
+        </div>
+        <div class="relative">
+          <img class="rounded-2xl aspect-[4/5] object-cover w-full shadow-2xl" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=600" alt="Chef preparing food">
+          <div class="absolute -bottom-6 -left-6 bg-brand-600 rounded-2xl p-6 text-white shadow-xl hidden md:block">
+            <div class="text-3xl font-bold">15+</div>
+            <div class="text-brand-100 text-sm">Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="bg-slate-50 dark:bg-slate-900 py-16">
+      <div class="container max-w-7xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="text-4xl md:text-5xl font-bold text-brand-600 font-display">15+</div>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 font-medium">Years Experience</p>
+          </div>
+          <div class="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="text-4xl md:text-5xl font-bold text-brand-600 font-display">50K+</div>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 font-medium">Happy Guests</p>
+          </div>
+          <div class="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="text-4xl md:text-5xl font-bold text-brand-600 font-display">120+</div>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 font-medium">Menu Items</p>
+          </div>
+          <div class="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="text-4xl md:text-5xl font-bold text-brand-600 font-display">12</div>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 font-medium">Awards Won</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== OUR VALUES ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Our Values</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">What We Offer</h2>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="text-center p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition dark:bg-slate-800/50">
+          <div class="w-16 h-16 mx-auto rounded-full bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-3xl">🥩</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Quality Ingredients</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">Daily deliveries from local farms. All meat is halal-certified. Vegetables are always fresh, never frozen.</p>
+        </div>
+        <div class="text-center p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition dark:bg-slate-800/50">
+          <div class="w-16 h-16 mx-auto rounded-full bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-3xl">⏱️</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Fast Service</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">Average wait time: 15 minutes for appetizers, 25 minutes for mains. Takeout ready in 20 minutes.</p>
+        </div>
+        <div class="text-center p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition dark:bg-slate-800/50">
+          <div class="w-16 h-16 mx-auto rounded-full bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-3xl">✅</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Hygiene & Safety</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">A-grade health inspection rating. Open kitchen concept so you can see your food being prepared.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TEAM ==================== -->
+    <section class="bg-slate-50 dark:bg-slate-900 py-16">
+      <div class="container max-w-7xl">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Our Team</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Meet Our Chefs</h2>
+          <p class="mt-3 text-slate-500 dark:text-slate-400">15 years combined experience. Trained in Paris, Tokyo, and Beirut.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+          <!-- Chef 1 -->
+          <div class="text-center p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 transition">
+            <img class="w-24 h-24 mx-auto rounded-full object-cover ring-4 ring-brand-100 dark:ring-brand-900/30" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=200" alt="Chef Marco">
+            <h4 class="mt-4 font-semibold text-lg dark:text-white">Marco Rosetti</h4>
+            <p class="text-brand-600 text-sm font-medium">Executive Chef & Founder</p>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">15 years experience. Le Cordon Bleu, Paris. Oversees the full menu.</p>
+            <div class="mt-4 flex justify-center gap-3">
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">in</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">X</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">ig</a>
+            </div>
+          </div>
+          <!-- Chef 2 -->
+          <div class="text-center p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 transition">
+            <img class="w-24 h-24 mx-auto rounded-full object-cover ring-4 ring-brand-100 dark:ring-brand-900/30" src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=200" alt="Chef Yuki">
+            <h4 class="mt-4 font-semibold text-lg dark:text-white">Yuki Tanaka</h4>
+            <p class="text-brand-600 text-sm font-medium">Head Sushi Chef</p>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">12 years experience. Specializes in sashimi, nigiri & maki rolls.</p>
+            <div class="mt-4 flex justify-center gap-3">
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">in</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">X</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">ig</a>
+            </div>
+          </div>
+          <!-- Chef 3 -->
+          <div class="text-center p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 transition">
+            <img class="w-24 h-24 mx-auto rounded-full object-cover ring-4 ring-brand-100 dark:ring-brand-900/30" src="https://images.unsplash.com/photo-1583394293214-28ez9e1de7c5?w=200" alt="Chef Sofia">
+            <h4 class="mt-4 font-semibold text-lg dark:text-white">Sofia Laurent</h4>
+            <p class="text-brand-600 text-sm font-medium">Pastry Chef</p>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">10 years experience. Handles all desserts, cakes & pastries.</p>
+            <div class="mt-4 flex justify-center gap-3">
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">in</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">X</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">ig</a>
+            </div>
+          </div>
+          <!-- Chef 4 -->
+          <div class="text-center p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 transition">
+            <img class="w-24 h-24 mx-auto rounded-full object-cover ring-4 ring-brand-100 dark:ring-brand-900/30" src="https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?w=200" alt="Chef Ahmed">
+            <h4 class="mt-4 font-semibold text-lg dark:text-white">Ahmed Khalil</h4>
+            <p class="text-brand-600 text-sm font-medium">Grill Master</p>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">8 years experience. Runs the grill station and BBQ specials.</p>
+            <div class="mt-4 flex justify-center gap-3">
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">in</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">X</a>
+              <a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition text-xs" href="#">ig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TIMELINE ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Our Journey</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Milestones</h2>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-8">
+        <div class="flex gap-6">
+          <div class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-sm shrink-0">2010</div>
+            <div class="w-0.5 flex-1 bg-slate-200 dark:bg-slate-700 mt-2"></div>
+          </div>
+          <div class="pb-8">
+            <h3 class="font-semibold text-lg dark:text-white">The Beginning</h3>
+            <p class="mt-1 text-slate-500 dark:text-slate-400">Opened as a 30-seat bistro downtown with a small menu of 15 dishes.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-sm shrink-0">2014</div>
+            <div class="w-0.5 flex-1 bg-slate-200 dark:bg-slate-700 mt-2"></div>
+          </div>
+          <div class="pb-8">
+            <h3 class="font-semibold text-lg dark:text-white">First Award</h3>
+            <p class="mt-1 text-slate-500 dark:text-slate-400">Won "Best New Restaurant" from the City's Culinary Association.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-sm shrink-0">2018</div>
+            <div class="w-0.5 flex-1 bg-slate-200 dark:bg-slate-700 mt-2"></div>
+          </div>
+          <div class="pb-8">
+            <h3 class="font-semibold text-lg dark:text-white">Expansion</h3>
+            <p class="mt-1 text-slate-500 dark:text-slate-400">Moved to a 120-seat location with full bar, private dining room, and outdoor terrace.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-sm shrink-0">2026</div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg dark:text-white">Today & Beyond</h3>
+            <p class="mt-1 text-slate-500 dark:text-slate-400">Serving 50,000+ guests per year. Planning second location and launching a cooking academy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="bg-brand-600 dark:bg-brand-700">
+      <div class="container max-w-7xl py-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Visit Us Today</h2>
+        <p class="mt-3 text-brand-100 max-w-xl mx-auto">Open daily. Walk-ins welcome. Reservations recommended for weekends.</p>
+        <div class="mt-8">
+          <a href="index.html#reservation" class="px-6 py-3.5 rounded-md bg-white text-brand-700 hover:bg-brand-50 transition font-semibold shadow-lg inline-block">Reserve a Table →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
+          <span class="text-brand-500 text-2xl">🍽</span>
+          <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
+        </a>
+        <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">fb</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">ig</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">X</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
+          <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="index.html#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Opening Hours</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex justify-between"><span>Monday - Friday</span><span class="text-white">11am - 11pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-white">10am - 12am</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Newsletter</h4>
+        <p class="mt-3 text-sm text-slate-400">Subscribe for exclusive offers and new menu announcements.</p>
+        <form class="mt-3 flex gap-2">
+          <input class="min-w-0 flex-1 rounded-md border border-slate-700 bg-slate-800 text-slate-100 placeholder-slate-400 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your email">
+          <button class="px-4 py-2 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition text-sm font-medium">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+        <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a class="hover:text-white transition" href="#">Privacy Policy</a>
+          <a class="hover:text-white transition" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    navToggle.onclick = () => mobileNav.classList.toggle('hidden');
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    darkToggle.onclick = toggleDark;
+    darkToggleDesktop.onclick = toggleDark;
+    if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+  </script>
+</body>
+</html>

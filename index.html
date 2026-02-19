@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CraveKitchen — Fine Dining Restaurant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50:  '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    html { scroll-behavior: smooth; }
+    /* Dark mode transition */
+    * { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+  </style>
+</head>
+<body class="text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
+    <nav class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+        <span class="text-brand-600 text-3xl">🍽</span>
+        <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
+      </a>
+
+      <!-- Dark Mode Toggle -->
+      <button id="darkToggle" class="md:hidden absolute right-16 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+
+      <button class="md:hidden p-2 rounded border border-slate-300 dark:border-slate-600" id="navToggle">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <ul class="hidden md:flex items-center gap-6">
+        <li><a class="hover:text-brand-600 font-medium text-brand-600" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li>
+          <button id="darkToggleDesktop" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+            <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+        </li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="#reservation">Reserve a Table</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+      <ul class="container py-4 grid gap-3">
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 w-max hover:bg-brand-700 transition font-medium" href="#reservation">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40 z-10"></div>
+      <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600" alt="Restaurant interior">
+      <div class="container max-w-7xl relative z-20 grid md:grid-cols-2 items-center gap-8 py-24 md:py-32">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-brand-600/20 border border-brand-500/30 text-brand-300 px-4 py-1.5 text-sm font-medium mb-6">
+            � Open Today 11am – 11pm
+          </span>
+          <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white font-display leading-tight">
+            Welcome to <span class="text-brand-400">CraveKitchen</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-300 max-w-lg">
+            Fresh grills, hand-rolled sushi, wood-fired pizza & craft cocktails. Dine in, take out, or book a private event.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a class="px-6 py-3.5 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition font-semibold shadow-lg shadow-brand-600/30" href="#reservation">
+              Reserve a Table
+            </a>
+            <a class="px-6 py-3.5 rounded-md border border-white/30 text-white hover:bg-white/10 transition font-semibold" href="services.html">
+              Explore Menu
+            </a>
+          </div>
+          <div class="mt-10 flex items-center gap-6 text-white/80">
+            <div class="flex items-center gap-2">
+              <span class="text-yellow-400">★★★★★</span>
+              <span class="text-sm">4.9 Rating</span>
+            </div>
+            <div class="h-5 w-px bg-white/30"></div>
+            <div class="text-sm">500+ Reviews</div>
+            <div class="h-5 w-px bg-white/30"></div>
+            <div class="text-sm">15 Years</div>
+          </div>
+        </div>
+        <div class="hidden md:block"></div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURES / WHY US ==================== -->
+    <section class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+      <div class="container max-w-7xl py-14">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="p-6">
+            <div class="text-4xl mb-3">🍽</div>
+            <h3 class="font-semibold dark:text-white">Dine In</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">120 seats · Indoor & patio</p>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl mb-3">🛵</div>
+            <h3 class="font-semibold dark:text-white">Delivery</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Free delivery within 5 km</p>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl mb-3">📦</div>
+            <h3 class="font-semibold dark:text-white">Takeout</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Order online or by phone</p>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl mb-3">🎉</div>
+            <h3 class="font-semibold dark:text-white">Private Events</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Parties up to 40 guests</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MENU HIGHLIGHTS (Services Teaser) ==================== -->
+    <section class="container max-w-7xl py-16" id="menu">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Our Specialties</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Explore Our Menu</h2>
+        <p class="mt-3 text-slate-500 dark:text-slate-400">6 categories · 80+ dishes · Prices from $11 to $38</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:-translate-y-0.5 transition group dark:bg-slate-800/50">
+          <div class="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-2xl">🥗</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Appetizers</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-3">Crispy calamari, bruschetta, salads, soups & spring rolls. From $11.</p>
+          <a href="services.html" class="mt-4 inline-flex items-center text-brand-600 font-medium group-hover:gap-2 transition-all gap-1">
+            View Menu <span>→</span>
+          </a>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:-translate-y-0.5 transition group dark:bg-slate-800/50">
+          <div class="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-2xl">🥩</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Main Course</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-3">Grilled steaks, lamb, salmon, chicken & vegetarian options. From $22.</p>
+          <a href="services.html" class="mt-4 inline-flex items-center text-brand-600 font-medium group-hover:gap-2 transition-all gap-1">
+            View Menu <span>→</span>
+          </a>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:-translate-y-0.5 transition group dark:bg-slate-800/50">
+          <div class="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-2xl">🍰</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Desserts</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-3">Chocolate fondant, crème brûlée, tiramisu, macarons & seasonal fruit. From $10.</p>
+          <a href="services.html" class="mt-4 inline-flex items-center text-brand-600 font-medium group-hover:gap-2 transition-all gap-1">
+            View Menu <span>→</span>
+          </a>
+        </div>
+        <!-- Card 4 -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:-translate-y-0.5 transition group dark:bg-slate-800/50">
+          <div class="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-2xl">🍝</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Pasta & Risotto</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-3">Spaghetti, fettuccine, penne, mushroom risotto & truffle pasta. From $18.</p>
+          <a href="services.html" class="mt-4 inline-flex items-center text-brand-600 font-medium group-hover:gap-2 transition-all gap-1">
+            View Menu <span>→</span>
+          </a>
+        </div>
+        <!-- Card 5 -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:-translate-y-0.5 transition group dark:bg-slate-800/50">
+          <div class="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-2xl">🍣</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Sushi & Seafood</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-3">Salmon, tuna & shrimp rolls, grilled lobster, fish & chips. From $16.</p>
+          <a href="services.html" class="mt-4 inline-flex items-center text-brand-600 font-medium group-hover:gap-2 transition-all gap-1">
+            View Menu <span>→</span>
+          </a>
+        </div>
+        <!-- Card 6 -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:-translate-y-0.5 transition group dark:bg-slate-800/50">
+          <div class="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-2xl">🍹</div>
+          <h3 class="mt-4 text-lg font-semibold dark:text-white">Beverages</h3>
+          <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-3">Cocktails, wines, fresh juices, coffee & soft drinks. From $5.</p>
+          <a href="services.html" class="mt-4 inline-flex items-center text-brand-600 font-medium group-hover:gap-2 transition-all gap-1">
+            View Menu <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY / PORTFOLIO ==================== -->
+    <section class="bg-slate-50 dark:bg-slate-900 py-16">
+      <div class="container max-w-7xl">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Gallery</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Our Signature Dishes</h2>
+          <p class="mt-3 text-slate-500 dark:text-slate-400">A look at what we serve every day.</p>
+        </div>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/3]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Fresh salad">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Appetizer</span>
+                <h3 class="mt-2 text-white font-semibold text-lg">Mediterranean Salad</h3>
+              </div>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/3]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Pizza">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Main Course</span>
+                <h3 class="mt-2 text-white font-semibold text-lg">Wood-fired Pizza</h3>
+              </div>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/3]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600" alt="Pancakes">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Dessert</span>
+                <h3 class="mt-2 text-white font-semibold text-lg">Fluffy Pancakes</h3>
+              </div>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/3]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600" alt="Grilled meat">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Main Course</span>
+                <h3 class="mt-2 text-white font-semibold text-lg">BBQ Ribs Platter</h3>
+              </div>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/3]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600" alt="Burger">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Burger</span>
+                <h3 class="mt-2 text-white font-semibold text-lg">Classic Smash Burger</h3>
+              </div>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/3]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600" alt="Dessert">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Dessert</span>
+                <h3 class="mt-2 text-white font-semibold text-lg">Chocolate Macarons</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">What Our Guests Say</h2>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 dark:bg-slate-800/50">
+          <div class="text-yellow-400 mb-3">★★★★★</div>
+          <p class="text-slate-600 dark:text-slate-300 italic">"Grilled ribeye was perfect, service was fast. We come here every Friday."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Sarah">
+            <div>
+              <p class="font-semibold text-sm dark:text-white">Sarah Johnson</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Food Blogger</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 dark:bg-slate-800/50">
+          <div class="text-yellow-400 mb-3">★★★★★</div>
+          <p class="text-slate-600 dark:text-slate-300 italic">"Best sushi I've had outside Japan. Fresh fish, great portion sizes, and the staff remembers our names."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Michael">
+            <div>
+              <p class="font-semibold text-sm dark:text-white">Michael Chen</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Regular Guest</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 dark:bg-slate-800/50">
+          <div class="text-yellow-400 mb-3">★★★★★</div>
+          <p class="text-slate-600 dark:text-slate-300 italic">"We booked the private room for our anniversary. Great wine list, the chocolate fondant is a must."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Emily">
+            <div>
+              <p class="font-semibold text-sm dark:text-white">Emily Roberts</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Verified Diner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA BAND ==================== -->
+    <section class="bg-brand-600 dark:bg-brand-700" id="reservation">
+      <div class="container max-w-7xl py-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Reserve Your Table Now</h2>
+        <p class="mt-3 text-brand-100 max-w-xl mx-auto">Call us or book online. Private dining room available for groups of 10+.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="tel:+1234567890" class="px-6 py-3.5 rounded-md bg-white text-brand-700 hover:bg-brand-50 transition font-semibold shadow-lg">
+            📞 Call Now
+          </a>
+          <a href="#contact" class="px-6 py-3.5 rounded-md border-2 border-white text-white hover:bg-white/10 transition font-semibold">
+            Book Online
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BLOG PREVIEW ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="flex items-center justify-between mb-10">
+        <div>
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">From the Kitchen</span>
+          <h2 class="mt-2 text-3xl font-bold font-display dark:text-white">Latest Blog Posts</h2>
+        </div>
+        <a href="blog.html" class="hidden sm:inline-flex items-center gap-1 text-brand-600 font-medium hover:gap-2 transition-all">View all →</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="group">
+          <div class="overflow-hidden rounded-2xl">
+            <img class="w-full aspect-[16/10] object-cover group-hover:scale-[1.03] transition duration-500" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600" alt="Cooking secrets">
+          </div>
+          <div class="mt-4 space-y-2">
+            <a href="post.html" class="text-xl font-semibold group-hover:text-brand-600 transition dark:text-white">5 Secrets Every Home Chef Should Know</a>
+            <p class="text-slate-500 dark:text-slate-400 line-clamp-2">Master the art of cooking with these professional tips from our executive chef...</p>
+            <div class="text-sm text-slate-400">Feb 15, 2026 · 5 min read</div>
+          </div>
+        </article>
+        <article class="group">
+          <div class="overflow-hidden rounded-2xl">
+            <img class="w-full aspect-[16/10] object-cover group-hover:scale-[1.03] transition duration-500" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Wine pairing">
+          </div>
+          <div class="mt-4 space-y-2">
+            <a href="post.html" class="text-xl font-semibold group-hover:text-brand-600 transition dark:text-white">The Art of Wine & Food Pairing</a>
+            <p class="text-slate-500 dark:text-slate-400 line-clamp-2">Discover the perfect wine pairing for every meal with our sommelier's guide...</p>
+            <div class="text-sm text-slate-400">Feb 10, 2026 · 7 min read</div>
+          </div>
+        </article>
+        <article class="group">
+          <div class="overflow-hidden rounded-2xl">
+            <img class="w-full aspect-[16/10] object-cover group-hover:scale-[1.03] transition duration-500" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600" alt="Seasonal menu">
+          </div>
+          <div class="mt-4 space-y-2">
+            <a href="post.html" class="text-xl font-semibold group-hover:text-brand-600 transition dark:text-white">Spring Menu: Fresh Seasonal Delights</a>
+            <p class="text-slate-500 dark:text-slate-400 line-clamp-2">Explore our new spring menu featuring the freshest seasonal ingredients...</p>
+            <div class="text-sm text-slate-400">Feb 5, 2026 · 4 min read</div>
+          </div>
+        </article>
+      </div>
+      <div class="mt-8 text-center sm:hidden">
+        <a href="blog.html" class="text-brand-600 font-medium">View all posts →</a>
+      </div>
+    </section>
+
+    <!-- ==================== LOGOS / TRUST ==================== -->
+    <section class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div class="container max-w-7xl py-12">
+        <p class="text-center text-sm text-slate-400 uppercase tracking-wider font-semibold mb-8">Our Partners</p>
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-8 items-center opacity-50 grayscale">
+          <div class="text-center text-2xl font-bold text-slate-400">Talabat</div>
+          <div class="text-center text-2xl font-bold text-slate-400">Careem</div>
+          <div class="text-center text-2xl font-bold text-slate-400">Uber Eats</div>
+          <div class="text-center text-2xl font-bold text-slate-400 hidden md:block">Toters</div>
+          <div class="text-center text-2xl font-bold text-slate-400 hidden md:block">OpenTable</div>
+          <div class="text-center text-2xl font-bold text-slate-400 hidden md:block">Google</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT / MAP ==================== -->
+    <section class="container max-w-7xl py-16" id="contact">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+          <h2 class="mt-2 text-3xl font-bold font-display dark:text-white">Contact Us</h2>
+          <p class="mt-3 text-slate-500 dark:text-slate-400">Reserve a table, ask about catering, or send us feedback.</p>
+          <form class="mt-8 space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium mb-1.5 dark:text-slate-300">First Name</label>
+                <input type="text" class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-800 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="John">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1.5 dark:text-slate-300">Last Name</label>
+                <input type="text" class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-800 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="Doe">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5 dark:text-slate-300">Email</label>
+              <input type="email" class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-800 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="john@example.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5 dark:text-slate-300">Message</label>
+              <textarea rows="4" class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-800 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="Tell us about your reservation or inquiry..."></textarea>
+            </div>
+            <button type="submit" class="px-6 py-3 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition font-semibold">Send Message</button>
+          </form>
+        </div>
+        <div class="space-y-6">
+          <div class="rounded-2xl overflow-hidden aspect-video bg-slate-200 dark:bg-slate-800">
+            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.5!2d35.9!3d31.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU3JzAwLjAiTiAzNcKwNTQnMDAuMCJF!5e0!3m2!1sen!2s!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+              <h4 class="font-semibold dark:text-white">📍 Address</h4>
+              <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">123 Gourmet Street<br>Downtown, City 12345</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+              <h4 class="font-semibold dark:text-white">🕐 Hours</h4>
+              <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Mon-Fri: 11am – 11pm<br>Sat-Sun: 10am – 12am</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+              <h4 class="font-semibold dark:text-white">📞 Phone</h4>
+              <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">+1 (234) 567-8900</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+              <h4 class="font-semibold dark:text-white">✉️ Email</h4>
+              <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">info@cravekitchen.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300 mt-0">
+    <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
+          <span class="text-brand-500 text-2xl">🍽</span>
+          <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
+        </a>
+        <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">fb</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">ig</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">X</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
+          <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Opening Hours</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex justify-between"><span>Monday - Friday</span><span class="text-white">11am - 11pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-white">10am - 12am</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Newsletter</h4>
+        <p class="mt-3 text-sm text-slate-400">Subscribe for exclusive offers and new menu announcements.</p>
+        <form class="mt-3 flex gap-2">
+          <input class="min-w-0 flex-1 rounded-md border border-slate-700 bg-slate-800 text-slate-100 placeholder-slate-400 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your email">
+          <button class="px-4 py-2 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition text-sm font-medium">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+        <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a class="hover:text-white transition" href="#">Privacy Policy</a>
+          <a class="hover:text-white transition" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Mobile nav toggle
+    navToggle.onclick = () => mobileNav.classList.toggle('hidden');
+
+    // Dark mode toggle
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    darkToggle.onclick = toggleDark;
+    darkToggleDesktop.onclick = toggleDark;
+
+    // Restore dark mode
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+    }
+
+    // Scroll animation (simple)
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Make header section visible immediately
+    document.querySelector('header').style.opacity = '1';
+    document.querySelector('header').style.transform = 'none';
+  </script>
+</body>
+</html>

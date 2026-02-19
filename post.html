@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Secrets Every Home Chef Should Know — CraveKitchen Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+              400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              800: '#9a3412', 900: '#7c2d12',
+            }
+          },
+          typography: {
+            DEFAULT: {
+              css: {
+                maxWidth: 'none',
+              }
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+    * { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+    /* Prose-like styling without plugin */
+    .prose p { margin-bottom: 1.25rem; line-height: 1.8; }
+    .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose li { margin-bottom: 0.5rem; line-height: 1.7; }
+    .prose blockquote { border-left: 4px solid #ea580c; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #64748b; }
+    .prose img { border-radius: 1rem; margin: 1.5rem 0; }
+    .prose a { color: #ea580c; text-decoration: underline; }
+  </style>
+</head>
+<body class="text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
+    <nav class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+        <span class="text-brand-600 text-3xl">🍽</span>
+        <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
+      </a>
+      <button id="darkToggle" class="md:hidden absolute right-16 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+      <button class="md:hidden p-2 rounded border border-slate-300 dark:border-slate-600" id="navToggle">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <ul class="hidden md:flex items-center gap-6">
+        <li><a class="hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium text-brand-600" href="blog.html">Blog</a></li>
+        <li>
+          <button id="darkToggleDesktop" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+            <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+        </li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </nav>
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+      <ul class="container py-4 grid gap-3">
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 w-max hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <nav class="bg-slate-50 border-b border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+    <ol class="container max-w-7xl flex items-center gap-2 py-3 text-sm">
+      <li><a class="text-slate-500 hover:text-brand-600 transition" href="index.html">Home</a></li>
+      <li class="text-slate-400">/</li>
+      <li><a class="text-slate-500 hover:text-brand-600 transition" href="blog.html">Blog</a></li>
+      <li class="text-slate-400">/</li>
+      <li class="text-slate-800 dark:text-white font-medium">5 Secrets Every Home Chef Should Know</li>
+    </ol>
+  </nav>
+
+  <main>
+    <article class="container max-w-7xl py-12 grid lg:grid-cols-3 gap-10">
+      <!-- ==================== MAIN CONTENT ==================== -->
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl md:text-4xl font-bold font-display dark:text-white leading-tight">5 Secrets Every Home Chef Should Know</h1>
+
+        <div class="mt-4 flex flex-wrap items-center gap-4">
+          <div class="flex items-center gap-2">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=100" alt="Chef Marco">
+            <div>
+              <p class="font-medium text-sm dark:text-white">Chef Marco Rosetti</p>
+              <p class="text-xs text-slate-400">Executive Chef & Founder</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 text-sm text-slate-400">
+            <span>Feb 15, 2026</span>
+            <span>·</span>
+            <span>5 min read</span>
+            <span>·</span>
+            <span>124 views</span>
+          </div>
+        </div>
+
+        <img class="mt-8 rounded-2xl aspect-[16/9] w-full object-cover" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200" alt="Chef cooking in kitchen">
+
+        <!-- Article Body -->
+        <div class="prose mt-8 text-slate-600 dark:text-slate-400">
+          <p>Cooking at home doesn't have to be intimidating. After 15 years in professional kitchens, I've distilled the most impactful techniques into five simple secrets that will transform your home cooking. These aren't complicated restaurant tricks — they're fundamental principles that every cook, from beginner to advanced, can apply immediately.</p>
+
+          <h2 class="dark:text-white">1. Season in Layers, Not All at Once</h2>
+          <p>The biggest difference between restaurant food and home cooking is seasoning. Professional chefs season at <strong>every stage</strong> of cooking. When you're building a soup, season the onions as they sauté, season the vegetables as they go in, and taste and adjust at the end.</p>
+          <blockquote>"Salt isn't just about making food salty — it's about amplifying the natural flavors that are already there. Think of it as turning up the volume on flavor."</blockquote>
+          <p>A good rule of thumb: season lightly multiple times rather than heavily once. You can always add more, but you can't take it away.</p>
+
+          <h2 class="dark:text-white">2. Let Your Pan Get Hot</h2>
+          <p>One of the most common mistakes home cooks make is putting food in a cold or lukewarm pan. For a proper sear on meat, caramelization on vegetables, or a perfectly fried egg, your pan needs to be properly preheated.</p>
+          <ul>
+            <li><strong>For searing meat:</strong> Heat your pan over high heat for 2-3 minutes before adding oil</li>
+            <li><strong>For sautéing vegetables:</strong> Medium-high heat with oil that shimmers</li>
+            <li><strong>The water test:</strong> Flick a drop of water onto the pan — if it dances and evaporates instantly, you're ready</li>
+          </ul>
+
+          <img class="w-full" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1000" alt="Chef with hot pan">
+
+          <h2 class="dark:text-white">3. Rest Your Meat (Seriously)</h2>
+          <p>I can't stress this enough: resting meat after cooking is not optional, it's essential. When meat cooks, the juices migrate to the center. If you cut immediately, all those beautiful juices flood your cutting board instead of staying in the meat.</p>
+          <p>As a general rule:</p>
+          <ol>
+            <li><strong>Steaks and chops:</strong> Rest for 5-8 minutes</li>
+            <li><strong>Chicken breasts:</strong> Rest for 5 minutes</li>
+            <li><strong>Whole roasts:</strong> Rest for 15-20 minutes (tent loosely with foil)</li>
+            <li><strong>Whole turkey:</strong> Rest for 30-45 minutes</li>
+          </ol>
+          <p>The meat will continue to cook slightly during this time (called "carryover cooking"), so pull it from heat a few degrees before your target temperature.</p>
+
+          <h2 class="dark:text-white">4. Acid is Your Secret Weapon</h2>
+          <p>If a dish tastes flat or one-dimensional, it probably needs acid, not more salt. A squeeze of lemon, a splash of vinegar, or a spoonful of tomato paste can transform a dull dish into something vibrant and alive.</p>
+          <p>Here are some go-to acids for different cuisines:</p>
+          <ul>
+            <li><strong>Italian:</strong> Red wine vinegar, balsamic, lemon</li>
+            <li><strong>Asian:</strong> Rice vinegar, lime juice</li>
+            <li><strong>Mexican:</strong> Lime juice, pickled onions</li>
+            <li><strong>French:</strong> White wine, Dijon mustard, sherry vinegar</li>
+          </ul>
+
+          <h2 class="dark:text-white">5. Mise en Place — Prepare Everything First</h2>
+          <p>This is the golden rule of professional kitchens: <em>mise en place</em> (everything in its place). Before you turn on the stove, read the entire recipe, and prep every ingredient. Dice your onions, mince your garlic, measure your spices, and have everything ready in little bowls.</p>
+          <p>This might seem like extra work, but it actually saves time and reduces stress. You'll never again burn your garlic because you were busy chopping carrots. Cooking becomes a calm, enjoyable experience rather than a chaotic scramble.</p>
+
+          <blockquote>"The secret to effortless cooking isn't cooking faster — it's preparing better. When everything is ready, all you have to do is cook."</blockquote>
+
+          <h2 class="dark:text-white">Putting It All Together</h2>
+          <p>These five principles may seem simple, but applying them consistently will make a noticeable difference. Start with one or two, and build from there.</p>
+          <p>Want hands-on practice? Join our monthly <strong>Cooking Workshop</strong> at CraveKitchen. Check our <a href="services.html">events page</a> for dates and pricing.</p>
+          <p>Happy cooking! 🍽</p>
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-10 flex flex-wrap gap-2">
+          <a class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition" href="#">Cooking Tips</a>
+          <a class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition" href="#">Home Chef</a>
+          <a class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition" href="#">Kitchen Secrets</a>
+          <a class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition" href="#">Techniques</a>
+          <a class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition" href="#">Seasoning</a>
+        </div>
+
+        <!-- Share -->
+        <div class="mt-8 flex items-center gap-4 py-6 border-t border-b border-slate-200 dark:border-slate-700">
+          <span class="font-medium text-sm dark:text-white">Share this post:</span>
+          <div class="flex gap-2">
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-600 transition text-sm">fb</a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-600 transition text-sm">X</a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-600 transition text-sm">in</a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-600 transition text-sm">✉</a>
+          </div>
+        </div>
+
+        <!-- Author Box -->
+        <div class="mt-8 flex gap-5 p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+          <img class="w-16 h-16 rounded-full object-cover shrink-0" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=150" alt="Chef Marco">
+          <div>
+            <h3 class="font-semibold dark:text-white">Chef Marco Rosetti</h3>
+            <p class="text-sm text-brand-600 font-medium">Executive Chef & Founder</p>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Founder of CraveKitchen. 15+ years in the kitchen. Le Cordon Bleu, Paris.</p>
+            <div class="mt-3 flex gap-2">
+              <a href="#" class="text-slate-400 hover:text-brand-600 transition text-sm">Twitter</a>
+              <span class="text-slate-300">·</span>
+              <a href="#" class="text-slate-400 hover:text-brand-600 transition text-sm">Instagram</a>
+              <span class="text-slate-300">·</span>
+              <a href="#" class="text-slate-400 hover:text-brand-600 transition text-sm">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="mt-12">
+          <h3 class="text-xl font-bold font-display dark:text-white mb-6">Related Articles</h3>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <article class="group">
+              <div class="overflow-hidden rounded-xl">
+                <img class="w-full aspect-[16/10] object-cover group-hover:scale-[1.03] transition duration-500" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="Pizza making">
+              </div>
+              <div class="mt-3">
+                <a href="post.html" class="font-semibold group-hover:text-brand-600 transition dark:text-white">Perfect Pizza Dough from Scratch</a>
+                <p class="text-sm text-slate-400 mt-1">Jan 20, 2026 · 8 min read</p>
+              </div>
+            </article>
+            <article class="group">
+              <div class="overflow-hidden rounded-xl">
+                <img class="w-full aspect-[16/10] object-cover group-hover:scale-[1.03] transition duration-500" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400" alt="Breakfast ideas">
+              </div>
+              <div class="mt-3">
+                <a href="post.html" class="font-semibold group-hover:text-brand-600 transition dark:text-white">10 Healthy Breakfast Ideas</a>
+                <p class="text-sm text-slate-400 mt-1">Jan 15, 2026 · 5 min read</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SIDEBAR ==================== -->
+      <aside class="space-y-6 lg:sticky lg:top-24 self-start">
+        <!-- Search -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+          <h3 class="font-semibold dark:text-white">🔍 Search</h3>
+          <form class="mt-3">
+            <input class="w-full rounded-md border border-slate-300 dark:border-slate-600 dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="Search articles...">
+          </form>
+        </div>
+
+        <!-- Categories -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+          <h3 class="font-semibold dark:text-white">📂 Categories</h3>
+          <ul class="mt-3 space-y-2">
+            <li><a class="flex items-center justify-between py-1.5 text-sm hover:text-brand-600 transition" href="#"><span>Cooking Tips</span><span class="text-slate-400 text-xs">(12)</span></a></li>
+            <li><a class="flex items-center justify-between py-1.5 text-sm hover:text-brand-600 transition" href="#"><span>Recipes</span><span class="text-slate-400 text-xs">(24)</span></a></li>
+            <li><a class="flex items-center justify-between py-1.5 text-sm hover:text-brand-600 transition" href="#"><span>Wine & Drinks</span><span class="text-slate-400 text-xs">(8)</span></a></li>
+            <li><a class="flex items-center justify-between py-1.5 text-sm hover:text-brand-600 transition" href="#"><span>Behind the Scenes</span><span class="text-slate-400 text-xs">(6)</span></a></li>
+            <li><a class="flex items-center justify-between py-1.5 text-sm hover:text-brand-600 transition" href="#"><span>Healthy Eating</span><span class="text-slate-400 text-xs">(10)</span></a></li>
+            <li><a class="flex items-center justify-between py-1.5 text-sm hover:text-brand-600 transition" href="#"><span>Events & News</span><span class="text-slate-400 text-xs">(5)</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+          <h3 class="font-semibold dark:text-white">📰 Recent Posts</h3>
+          <div class="mt-3 space-y-4">
+            <a href="post.html" class="flex gap-3 group">
+              <img class="w-16 h-12 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=150" alt="">
+              <div class="min-w-0">
+                <p class="text-sm font-medium group-hover:text-brand-600 transition dark:text-white leading-snug">The Art of Wine & Food Pairing</p>
+                <p class="text-xs text-slate-400 mt-1">Feb 10, 2026</p>
+              </div>
+            </a>
+            <a href="post.html" class="flex gap-3 group">
+              <img class="w-16 h-12 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=150" alt="">
+              <div class="min-w-0">
+                <p class="text-sm font-medium group-hover:text-brand-600 transition dark:text-white leading-snug">Spring Menu: Fresh Seasonal Delights</p>
+                <p class="text-xs text-slate-400 mt-1">Feb 5, 2026</p>
+              </div>
+            </a>
+            <a href="post.html" class="flex gap-3 group">
+              <img class="w-16 h-12 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=150" alt="">
+              <div class="min-w-0">
+                <p class="text-sm font-medium group-hover:text-brand-600 transition dark:text-white leading-snug">A Day in the Life of Our Kitchen</p>
+                <p class="text-xs text-slate-400 mt-1">Jan 28, 2026</p>
+              </div>
+            </a>
+            <a href="post.html" class="flex gap-3 group">
+              <img class="w-16 h-12 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=150" alt="">
+              <div class="min-w-0">
+                <p class="text-sm font-medium group-hover:text-brand-600 transition dark:text-white leading-snug">Perfect Pizza Dough from Scratch</p>
+                <p class="text-xs text-slate-400 mt-1">Jan 20, 2026</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Popular Tags -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 dark:bg-slate-800/50">
+          <h3 class="font-semibold dark:text-white">🏷 Popular Tags</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Recipes</a>
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Cooking</a>
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Italian</a>
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Desserts</a>
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Wine</a>
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Healthy</a>
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Seafood</a>
+            <a href="#" class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-brand-100 dark:hover:bg-brand-900/30 hover:text-brand-700 dark:hover:text-brand-400 transition">Tips</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="rounded-xl bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 p-5">
+          <h3 class="font-semibold text-brand-800 dark:text-brand-300">📬 Newsletter</h3>
+          <p class="mt-2 text-sm text-brand-700 dark:text-brand-400">Get weekly recipes and cooking tips delivered to your inbox.</p>
+          <form class="mt-3 space-y-2">
+            <input class="w-full rounded-md border border-brand-200 dark:border-brand-700 dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your email">
+            <button class="w-full px-4 py-2.5 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition text-sm font-medium">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
+          <span class="text-brand-500 text-2xl">🍽</span>
+          <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
+        </a>
+        <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">fb</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">ig</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">X</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
+          <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="index.html#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Opening Hours</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex justify-between"><span>Monday - Friday</span><span class="text-white">11am - 11pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-white">10am - 12am</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Newsletter</h4>
+        <p class="mt-3 text-sm text-slate-400">Subscribe for exclusive offers and new menu announcements.</p>
+        <form class="mt-3 flex gap-2">
+          <input class="min-w-0 flex-1 rounded-md border border-slate-700 bg-slate-800 text-slate-100 placeholder-slate-400 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your email">
+          <button class="px-4 py-2 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition text-sm font-medium">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+        <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a class="hover:text-white transition" href="#">Privacy Policy</a>
+          <a class="hover:text-white transition" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    navToggle.onclick = () => mobileNav.classList.toggle('hidden');
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    darkToggle.onclick = toggleDark;
+    darkToggleDesktop.onclick = toggleDark;
+    if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+  </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appetizers Menu — CraveKitchen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+              400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              800: '#9a3412', 900: '#7c2d12',
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    html { scroll-behavior: smooth; }
+    * { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+  </style>
+</head>
+<body class="text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
+    <nav class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+        <span class="text-brand-600 text-3xl">🍽</span>
+        <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
+      </a>
+      <button id="darkToggle" class="md:hidden absolute right-16 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+      <button class="md:hidden p-2 rounded border border-slate-300 dark:border-slate-600" id="navToggle">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <ul class="hidden md:flex items-center gap-6">
+        <li><a class="hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="hover:text-brand-600 font-medium text-brand-600" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li>
+          <button id="darkToggleDesktop" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+            <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+        </li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </nav>
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+      <ul class="container py-4 grid gap-3">
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 w-max hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <nav class="bg-slate-50 border-b border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+    <ol class="container max-w-7xl flex items-center gap-2 py-3 text-sm">
+      <li><a class="text-slate-500 hover:text-brand-600 transition" href="index.html">Home</a></li>
+      <li class="text-slate-400">/</li>
+      <li><a class="text-slate-500 hover:text-brand-600 transition" href="services.html">Menu</a></li>
+      <li class="text-slate-400">/</li>
+      <li class="text-slate-800 dark:text-white font-medium">Appetizers</li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ==================== SERVICE DETAIL ==================== -->
+    <section class="container max-w-7xl py-10">
+      <h1 class="text-3xl md:text-4xl font-bold font-display dark:text-white">🥗 Appetizers</h1>
+      <p class="mt-2 text-slate-500 dark:text-slate-400 max-w-2xl">12 items · Prices from $11 to $20 · Vegetarian & gluten-free options available</p>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-10">
+        <!-- Main Content -->
+        <article class="md:col-span-2 space-y-8">
+          <img class="rounded-2xl aspect-[16/9] w-full object-cover" src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=1000" alt="Appetizers spread">
+
+          <!-- Menu Items -->
+          <div class="space-y-4">
+            <h2 class="text-2xl font-bold font-display dark:text-white">Our Appetizers</h2>
+
+            <!-- Item 1 -->
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-md transition dark:bg-slate-800/50">
+              <img class="w-16 h-16 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=150" alt="Bruschetta">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold dark:text-white">Classic Bruschetta</h3>
+                  <span class="text-brand-600 font-bold">$12</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Toasted ciabatta, vine tomatoes, fresh basil, garlic, extra virgin olive oil</p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-md transition dark:bg-slate-800/50">
+              <img class="w-16 h-16 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=150" alt="Calamari">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold dark:text-white">Crispy Calamari</h3>
+                  <span class="text-brand-600 font-bold">$15</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Lightly battered squid, spicy marinara sauce, lemon aioli</p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-md transition dark:bg-slate-800/50">
+              <img class="w-16 h-16 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=150" alt="Salad">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold dark:text-white">Mediterranean Salad</h3>
+                  <span class="text-brand-600 font-bold">$14</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Mixed greens, cherry tomatoes, cucumber, feta, olives, herb vinaigrette</p>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-md transition dark:bg-slate-800/50">
+              <img class="w-16 h-16 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=150" alt="Soup">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold dark:text-white">Lobster Bisque</h3>
+                  <span class="text-brand-600 font-bold">$18</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Creamy lobster soup with sherry, topped with crème fraîche and chives</p>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-md transition dark:bg-slate-800/50">
+              <img class="w-16 h-16 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=150" alt="Tuna Tartare">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold dark:text-white">Tuna Tartare</h3>
+                  <span class="text-brand-600 font-bold">$20</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Fresh ahi tuna, avocado, sesame, soy ginger dressing, wonton crisps</p>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-md transition dark:bg-slate-800/50">
+              <img class="w-16 h-16 rounded-lg object-cover shrink-0" src="https://images.unsplash.com/photo-1607098665874-fd193397547b?w=150" alt="Spring Rolls">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold dark:text-white">Crispy Spring Rolls</h3>
+                  <span class="text-brand-600 font-bold">$11</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Vegetable spring rolls with sweet chili dipping sauce, served with fresh herbs</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p>All appetizers are made to order. Preparation time: 10–15 minutes. Allergen information available upon request. Ask your server about today's soup special.</p>
+          </div>
+
+          <!-- FAQ Accordion -->
+          <div class="space-y-3">
+            <h2 class="text-2xl font-bold font-display dark:text-white">Frequently Asked Questions</h2>
+
+            <details class="group rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-sm transition dark:bg-slate-800/50">
+              <summary class="cursor-pointer font-medium flex items-center justify-between dark:text-white">
+                Are there gluten-free appetizer options?
+                <span class="text-brand-600 group-open:rotate-180 transition-transform text-xl">▾</span>
+              </summary>
+              <div class="mt-3 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Yes! Our Mediterranean Salad and Tuna Tartare are naturally gluten-free. We can also modify other dishes upon request. Please inform your server of any dietary restrictions.</div>
+            </details>
+
+            <details class="group rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-sm transition dark:bg-slate-800/50">
+              <summary class="cursor-pointer font-medium flex items-center justify-between dark:text-white">
+                Can appetizers be shared?
+                <span class="text-brand-600 group-open:rotate-180 transition-transform text-xl">▾</span>
+              </summary>
+              <div class="mt-3 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Absolutely! Many of our appetizers are designed to be shared. We recommend ordering 2-3 different starters for the table to enjoy a variety of flavors.</div>
+            </details>
+
+            <details class="group rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-sm transition dark:bg-slate-800/50">
+              <summary class="cursor-pointer font-medium flex items-center justify-between dark:text-white">
+                Do you offer vegan appetizer options?
+                <span class="text-brand-600 group-open:rotate-180 transition-transform text-xl">▾</span>
+              </summary>
+              <div class="mt-3 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Yes, our Classic Bruschetta and Crispy Spring Rolls are vegan-friendly. We can also create custom vegan starters upon request — just let your server know!</div>
+            </details>
+
+            <details class="group rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-sm transition dark:bg-slate-800/50">
+              <summary class="cursor-pointer font-medium flex items-center justify-between dark:text-white">
+                What's your best-selling appetizer?
+                <span class="text-brand-600 group-open:rotate-180 transition-transform text-xl">▾</span>
+              </summary>
+              <div class="mt-3 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">The Crispy Calamari and Tuna Tartare are consistently our most ordered appetizers. The Lobster Bisque is also a seasonal favorite during colder months.</div>
+            </details>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6 md:sticky md:top-24 self-start">
+          <!-- Reservation Card -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-6 dark:bg-slate-800/50">
+            <h3 class="font-semibold text-lg dark:text-white">🍽 Reserve a Table</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Book your table online or call us directly.</p>
+            <a class="mt-4 inline-flex w-full justify-center px-4 py-2.5 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition font-medium" href="index.html#reservation">Make a Reservation</a>
+          </div>
+
+          <!-- Other Categories -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-6 dark:bg-slate-800/50">
+            <h3 class="font-semibold text-lg dark:text-white">Other Categories</h3>
+            <ul class="mt-3 space-y-2">
+              <li><a class="flex items-center justify-between py-2 text-sm hover:text-brand-600 transition border-b border-slate-100 dark:border-slate-700" href="service.html"><span>🥩 Main Course</span><span class="text-slate-400">18 items</span></a></li>
+              <li><a class="flex items-center justify-between py-2 text-sm hover:text-brand-600 transition border-b border-slate-100 dark:border-slate-700" href="service.html"><span>🍝 Pasta & Risotto</span><span class="text-slate-400">10 items</span></a></li>
+              <li><a class="flex items-center justify-between py-2 text-sm hover:text-brand-600 transition border-b border-slate-100 dark:border-slate-700" href="service.html"><span>🍣 Sushi & Seafood</span><span class="text-slate-400">15 items</span></a></li>
+              <li><a class="flex items-center justify-between py-2 text-sm hover:text-brand-600 transition border-b border-slate-100 dark:border-slate-700" href="service.html"><span>🍰 Desserts</span><span class="text-slate-400">8 items</span></a></li>
+              <li><a class="flex items-center justify-between py-2 text-sm hover:text-brand-600 transition" href="service.html"><span>🍹 Beverages</span><span class="text-slate-400">20 items</span></a></li>
+            </ul>
+          </div>
+
+          <!-- Special Offer -->
+          <div class="rounded-xl bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 p-6">
+            <h3 class="font-semibold text-lg text-brand-800 dark:text-brand-300">🔥 Today's Special</h3>
+            <p class="text-sm text-brand-700 dark:text-brand-400 mt-2">Order any 3 appetizers and get 15% off! Valid for dine-in only.</p>
+            <p class="text-xs text-brand-600 dark:text-brand-500 mt-3">*Cannot be combined with other offers</p>
+          </div>
+
+          <!-- Contact Card -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-6 dark:bg-slate-800/50">
+            <h3 class="font-semibold text-lg dark:text-white">📞 Questions?</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Allergies or dietary needs? Let us know and we'll adjust your order.</p>
+            <div class="mt-4 space-y-2 text-sm">
+              <p class="text-slate-600 dark:text-slate-300">📱 +1 (234) 567-8900</p>
+              <p class="text-slate-600 dark:text-slate-300">✉️ info@cravekitchen.com</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300 mt-16">
+    <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
+          <span class="text-brand-500 text-2xl">🍽</span>
+          <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
+        </a>
+        <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">fb</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">ig</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">X</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
+          <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="index.html#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Opening Hours</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex justify-between"><span>Monday - Friday</span><span class="text-white">11am - 11pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-white">10am - 12am</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Newsletter</h4>
+        <p class="mt-3 text-sm text-slate-400">Subscribe for exclusive offers and new menu announcements.</p>
+        <form class="mt-3 flex gap-2">
+          <input class="min-w-0 flex-1 rounded-md border border-slate-700 bg-slate-800 text-slate-100 placeholder-slate-400 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your email">
+          <button class="px-4 py-2 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition text-sm font-medium">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+        <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a class="hover:text-white transition" href="#">Privacy Policy</a>
+          <a class="hover:text-white transition" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    navToggle.onclick = () => mobileNav.classList.toggle('hidden');
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    darkToggle.onclick = toggleDark;
+    darkToggleDesktop.onclick = toggleDark;
+    if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+  </script>
+</body>
+</html>

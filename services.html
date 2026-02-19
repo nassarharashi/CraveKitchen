@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu — CraveKitchen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+              400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              800: '#9a3412', 900: '#7c2d12',
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    html { scroll-behavior: smooth; }
+    * { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+  </style>
+</head>
+<body class="text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
+    <nav class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+        <span class="text-brand-600 text-3xl">🍽</span>
+        <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
+      </a>
+      <button id="darkToggle" class="md:hidden absolute right-16 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+      <button class="md:hidden p-2 rounded border border-slate-300 dark:border-slate-600" id="navToggle">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <ul class="hidden md:flex items-center gap-6">
+        <li><a class="hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="hover:text-brand-600 font-medium text-brand-600" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li>
+          <button id="darkToggleDesktop" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
+            <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+        </li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </nav>
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+      <ul class="container py-4 grid gap-3">
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="block py-2 hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 w-max hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <nav class="bg-slate-50 border-b border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+    <ol class="container max-w-7xl flex items-center gap-2 py-3 text-sm">
+      <li><a class="text-slate-500 hover:text-brand-600 transition" href="index.html">Home</a></li>
+      <li class="text-slate-400">/</li>
+      <li class="text-slate-800 dark:text-white font-medium">Our Menu</li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ==================== MENU HERO ==================== -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10"></div>
+      <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600" alt="Beautiful food spread">
+      <div class="container max-w-7xl relative z-20 py-20 md:py-28 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white font-display">Our Menu</h1>
+        <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">80+ dishes across 6 categories. Prices from $11 to $38. Updated daily.</p>
+      </div>
+    </section>
+
+    <!-- ==================== MENU CATEGORIES GRID ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Browse Categories</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Explore by Category</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Category 1: Appetizers -->
+        <a href="service.html" class="group rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-800/50">
+          <div class="overflow-hidden aspect-[16/10]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600" alt="Appetizers">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold dark:text-white group-hover:text-brand-600 transition">Appetizers</h3>
+              <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-medium">12 Items</span>
+            </div>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-2">Bruschetta, calamari, salads, soups, tartare & spring rolls. Starters from $11.</p>
+            <span class="mt-4 inline-flex items-center text-brand-600 font-medium text-sm group-hover:gap-2 gap-1 transition-all">View Menu →</span>
+          </div>
+        </a>
+
+        <!-- Category 2: Main Course -->
+        <a href="service.html" class="group rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-800/50">
+          <div class="overflow-hidden aspect-[16/10]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600" alt="Main Course">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold dark:text-white group-hover:text-brand-600 transition">Main Course</h3>
+              <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-medium">18 Items</span>
+            </div>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-2">Grilled ribeye, lamb shank, salmon fillet, chicken breast & vegetarian dishes. From $22.</p>
+            <span class="mt-4 inline-flex items-center text-brand-600 font-medium text-sm group-hover:gap-2 gap-1 transition-all">View Menu →</span>
+          </div>
+        </a>
+
+        <!-- Category 3: Pasta & Risotto -->
+        <a href="service.html" class="group rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-800/50">
+          <div class="overflow-hidden aspect-[16/10]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold dark:text-white group-hover:text-brand-600 transition">Pasta & Risotto</h3>
+              <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-medium">10 Items</span>
+            </div>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-2">Spaghetti, fettuccine, penne, tagliatelle & mushroom or truffle risotto. From $18.</p>
+            <span class="mt-4 inline-flex items-center text-brand-600 font-medium text-sm group-hover:gap-2 gap-1 transition-all">View Menu →</span>
+          </div>
+        </a>
+
+        <!-- Category 4: Sushi & Seafood -->
+        <a href="service.html" class="group rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-800/50">
+          <div class="overflow-hidden aspect-[16/10]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600" alt="Sushi">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold dark:text-white group-hover:text-brand-600 transition">Sushi & Seafood</h3>
+              <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-medium">15 Items</span>
+            </div>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-2">Salmon, tuna & shrimp rolls, grilled lobster, fish & chips. Sourced fresh daily. From $16.</p>
+            <span class="mt-4 inline-flex items-center text-brand-600 font-medium text-sm group-hover:gap-2 gap-1 transition-all">View Menu →</span>
+          </div>
+        </a>
+
+        <!-- Category 5: Desserts -->
+        <a href="service.html" class="group rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-800/50">
+          <div class="overflow-hidden aspect-[16/10]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600" alt="Desserts">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold dark:text-white group-hover:text-brand-600 transition">Desserts</h3>
+              <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-medium">8 Items</span>
+            </div>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-2">Chocolate fondant, crème brûlée, tiramisu, macarons & seasonal fruit tarts. From $10.</p>
+            <span class="mt-4 inline-flex items-center text-brand-600 font-medium text-sm group-hover:gap-2 gap-1 transition-all">View Menu →</span>
+          </div>
+        </a>
+
+        <!-- Category 6: Beverages -->
+        <a href="service.html" class="group rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-800/50">
+          <div class="overflow-hidden aspect-[16/10]">
+            <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600" alt="Beverages">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold dark:text-white group-hover:text-brand-600 transition">Beverages</h3>
+              <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 text-xs font-medium">20 Items</span>
+            </div>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 line-clamp-2">Cocktails, wines by the glass or bottle, fresh juices, coffee, tea & soft drinks. From $5.</p>
+            <span class="mt-4 inline-flex items-center text-brand-600 font-medium text-sm group-hover:gap-2 gap-1 transition-all">View Menu →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== POPULAR DISHES ==================== -->
+    <section class="bg-slate-50 dark:bg-slate-900 py-16">
+      <div class="container max-w-7xl">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Chef's Picks</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Most Popular Dishes</h2>
+        </div>
+
+        <div class="grid gap-4">
+          <!-- Dish Item 1 -->
+          <div class="flex items-center gap-4 md:gap-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-md transition">
+            <img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shrink-0" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200" alt="Mediterranean Salad">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="font-semibold dark:text-white">Mediterranean Salad</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">Fresh mixed greens, cherry tomatoes, cucumber, feta cheese, olives, and herb vinaigrette</p>
+                </div>
+                <span class="text-brand-600 font-bold text-lg shrink-0">$14</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium">Vegetarian</span>
+                <span class="text-yellow-400 text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish Item 2 -->
+          <div class="flex items-center gap-4 md:gap-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-md transition">
+            <img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shrink-0" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=200" alt="Grilled Ribeye">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="font-semibold dark:text-white">Grilled Ribeye Steak</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">Prime 12oz ribeye, truffle mashed potatoes, grilled asparagus, red wine jus</p>
+                </div>
+                <span class="text-brand-600 font-bold text-lg shrink-0">$38</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-xs font-medium">Best Seller</span>
+                <span class="text-yellow-400 text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish Item 3 -->
+          <div class="flex items-center gap-4 md:gap-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-md transition">
+            <img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shrink-0" src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=200" alt="Sushi Platter">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="font-semibold dark:text-white">Chef's Sushi Platter</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">16-piece assorted sushi with salmon, tuna, shrimp, and eel rolls with wasabi and ginger</p>
+                </div>
+                <span class="text-brand-600 font-bold text-lg shrink-0">$32</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-medium">Gluten Free</span>
+                <span class="text-yellow-400 text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish Item 4 -->
+          <div class="flex items-center gap-4 md:gap-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-md transition">
+            <img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shrink-0" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=200" alt="Truffle Pasta">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="font-semibold dark:text-white">Black Truffle Pasta</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">Fresh tagliatelle with black truffle cream sauce, parmesan, and wild mushrooms</p>
+                </div>
+                <span class="text-brand-600 font-bold text-lg shrink-0">$28</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-xs font-medium">Chef's Choice</span>
+                <span class="text-yellow-400 text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish Item 5 -->
+          <div class="flex items-center gap-4 md:gap-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:shadow-md transition">
+            <img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shrink-0" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200" alt="Chocolate Fondant">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="font-semibold dark:text-white">Chocolate Fondant</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">Warm chocolate lava cake with vanilla bean ice cream and fresh berry compote</p>
+                </div>
+                <span class="text-brand-600 font-bold text-lg shrink-0">$16</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-medium">Must Try</span>
+                <span class="text-yellow-400 text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SPECIAL OFFERS ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="relative rounded-2xl overflow-hidden group">
+          <img class="w-full aspect-[16/9] object-cover group-hover:scale-[1.03] transition duration-500" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Weekend Brunch">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Weekend Special</span>
+              <h3 class="mt-3 text-2xl font-bold text-white font-display">Weekend Brunch Buffet</h3>
+              <p class="mt-2 text-slate-300 text-sm">Every Sat & Sun, 10am–2pm. Unlimited selections starting at $35/person.</p>
+              <a href="service.html" class="mt-4 inline-flex px-5 py-2.5 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition font-medium text-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden group">
+          <img class="w-full aspect-[16/9] object-cover group-hover:scale-[1.03] transition duration-500" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800" alt="Wine pairing">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Exclusive Event</span>
+              <h3 class="mt-3 text-2xl font-bold text-white font-display">Wine Tasting Evenings</h3>
+              <p class="mt-2 text-slate-300 text-sm">Monthly wine pairing dinner with our sommelier. Limited seats available.</p>
+              <a href="service.html" class="mt-4 inline-flex px-5 py-2.5 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition font-medium text-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="bg-brand-600 dark:bg-brand-700">
+      <div class="container max-w-7xl py-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Try Our Chef's Tasting Menu</h2>
+        <p class="mt-3 text-brand-100 max-w-xl mx-auto">7-course meal for $85/person. Available nightly. Reservations required.</p>
+        <div class="mt-8">
+          <a href="index.html#reservation" class="px-6 py-3.5 rounded-md bg-white text-brand-700 hover:bg-brand-50 transition font-semibold shadow-lg inline-block">Reserve Your Spot →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
+          <span class="text-brand-500 text-2xl">🍽</span>
+          <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
+        </a>
+        <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">fb</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">ig</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">X</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
+          <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="index.html#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Opening Hours</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex justify-between"><span>Monday - Friday</span><span class="text-white">11am - 11pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-white">10am - 12am</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Newsletter</h4>
+        <p class="mt-3 text-sm text-slate-400">Subscribe for exclusive offers and new menu announcements.</p>
+        <form class="mt-3 flex gap-2">
+          <input class="min-w-0 flex-1 rounded-md border border-slate-700 bg-slate-800 text-slate-100 placeholder-slate-400 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your email">
+          <button class="px-4 py-2 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition text-sm font-medium">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+        <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a class="hover:text-white transition" href="#">Privacy Policy</a>
+          <a class="hover:text-white transition" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    navToggle.onclick = () => mobileNav.classList.toggle('hidden');
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    darkToggle.onclick = toggleDark;
+    darkToggleDesktop.onclick = toggleDark;
+    if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+  </script>
+</body>
+</html>
