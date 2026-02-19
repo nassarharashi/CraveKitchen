@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — CraveKitchen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+              400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              800: '#9a3412', 900: '#7c2d12',
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+    * { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+  </style>
+</head>
+<body class="text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
+    <nav class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+        <span class="text-brand-600 text-3xl">🍽</span>
+        <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
+      </a>
+      <ul class="flex flex-wrap items-center gap-5">
+        <li><a class="hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium text-brand-600" href="portfolio.html">Gallery</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="contact.html">Contact</a></li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <nav class="bg-slate-50 border-b border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+    <ol class="container max-w-7xl flex items-center gap-2 py-3 text-sm">
+      <li><a class="text-slate-500 hover:text-brand-600 transition" href="index.html">Home</a></li>
+      <li class="text-slate-400">/</li>
+      <li class="text-slate-800 dark:text-white font-medium">Gallery</li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10"></div>
+      <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600" alt="Restaurant showcase">
+      <div class="container max-w-7xl relative z-20 py-20 md:py-28 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white font-display">Our Gallery</h1>
+        <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">A showcase of our food, events, and dining spaces.</p>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY GRID ==================== -->
+    <section class="container max-w-7xl py-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+        <!-- Food -->
+        <div class="gallery-item food group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Mediterranean Salad">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Food</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Mediterranean Salad</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item food group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Wood-fired Pizza">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Food</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Wood-fired Pizza</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item food group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600" alt="BBQ Ribs Platter">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Food</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">BBQ Ribs Platter</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interior -->
+        <div class="gallery-item interior group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" alt="Main Dining Hall">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Interior</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Main Dining Hall</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item interior group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600" alt="Outdoor Terrace">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Interior</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Outdoor Terrace</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item interior group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600" alt="Lounge Area">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Interior</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Lounge Area</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Events -->
+        <div class="gallery-item events group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600" alt="Birthday Party Setup">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Events</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Birthday Party Setup</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item events group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600" alt="Corporate Dinner">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Events</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Corporate Dinner</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kitchen -->
+        <div class="gallery-item kitchen group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=600" alt="Open Kitchen">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Kitchen</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Open Kitchen</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Food -->
+        <div class="gallery-item food group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600" alt="Fluffy Pancakes">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Food</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Fluffy Pancakes</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item food group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600" alt="Classic Smash Burger">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Food</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Classic Smash Burger</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item food group relative overflow-hidden rounded-2xl aspect-[4/3]">
+          <img class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600" alt="Chocolate Macarons">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-medium">Food</span>
+              <h3 class="mt-2 text-white font-semibold text-lg">Chocolate Macarons</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="album.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition font-semibold">📷 View Full Photo Album →</a>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES SHOWCASE ==================== -->
+    <section class="bg-slate-50 dark:bg-slate-900 py-16">
+      <div class="container max-w-7xl">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">What We Offer</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-bold font-display dark:text-white">Our Services</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-8 text-center hover:shadow-lg transition dark:bg-slate-800/50">
+            <div class="text-4xl mb-4">🍽</div>
+            <h3 class="text-lg font-semibold dark:text-white">Dine-In</h3>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">120 seats with indoor and outdoor options. Premium comfort for every guest.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-8 text-center hover:shadow-lg transition dark:bg-slate-800/50">
+            <div class="text-4xl mb-4">🎉</div>
+            <h3 class="text-lg font-semibold dark:text-white">Private Events</h3>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">Private dining room for up to 40 guests. Custom menus available.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-8 text-center hover:shadow-lg transition dark:bg-slate-800/50">
+            <div class="text-4xl mb-4">🚚</div>
+            <h3 class="text-lg font-semibold dark:text-white">Catering</h3>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">Corporate lunches, weddings, and parties. 20–200 guests.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-8 text-center hover:shadow-lg transition dark:bg-slate-800/50">
+            <div class="text-4xl mb-4">🛵</div>
+            <h3 class="text-lg font-semibold dark:text-white">Delivery</h3>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">Free delivery within 5 km. Available via Talabat, Careem & Uber Eats.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-8 text-center hover:shadow-lg transition dark:bg-slate-800/50">
+            <div class="text-4xl mb-4">📦</div>
+            <h3 class="text-lg font-semibold dark:text-white">Takeout</h3>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">Order by phone or online. Ready in 20 minutes.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-8 text-center hover:shadow-lg transition dark:bg-slate-800/50">
+            <div class="text-4xl mb-4">👨‍🍳</div>
+            <h3 class="text-lg font-semibold dark:text-white">Cooking Workshops</h3>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">Monthly hands-on classes with our chefs. Max 12 participants.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
+          <span class="text-brand-500 text-2xl">🍽</span>
+          <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
+        </a>
+        <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">fb</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">ig</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">X</a>
+          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
+          <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="portfolio.html">Gallery</a></li>
+          <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Explore</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="album.html">Photo Album</a></li>
+          <li><a class="hover:text-white transition" href="team.html">Our Team</a></li>
+          <li><a class="hover:text-white transition" href="testimonials.html">Testimonials</a></li>
+          <li><a class="hover:text-white transition" href="faq.html">FAQ</a></li>
+          <li><a class="hover:text-white transition" href="index.html#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Opening Hours</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex justify-between"><span>Monday - Friday</span><span class="text-white">11am - 11pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-white">10am - 12am</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+        <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a class="hover:text-white transition" href="privacy.html">Privacy Policy</a>
+          <a class="hover:text-white transition" href="return-policy.html">Return Policy</a>
+          <a class="hover:text-white transition" href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
