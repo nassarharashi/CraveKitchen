@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials — CraveKitchen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: { center: true, padding: "1rem" },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+              400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              800: '#9a3412', 900: '#7c2d12',
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+    * { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+  </style>
+</head>
+<body class="text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
+    <nav class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+        <span class="text-brand-600 text-3xl">🍽</span>
+        <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
+      </a>
+      <ul class="flex flex-wrap items-center gap-5">
+        <li><a class="hover:text-brand-600 font-medium" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="about.html">About</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="portfolio.html">Gallery</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="contact.html">Contact</a></li>
+        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-16 md:py-20">
+    <div class="container max-w-7xl text-center">
+      <h1 class="text-4xl md:text-5xl font-bold font-display">What Our Guests Say</h1>
+      <p class="mt-4 text-brand-100 max-w-2xl mx-auto">Real reviews from real guests. Here's what people are saying about their CraveKitchen experience.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- ==================== STATS ==================== -->
+    <section class="container max-w-7xl py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <p class="text-3xl font-bold text-brand-600">4.8</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Average Rating</p>
+          <div class="flex justify-center mt-2 text-yellow-400 text-sm">★★★★★</div>
+        </div>
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <p class="text-3xl font-bold text-brand-600">2,400+</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Total Reviews</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <p class="text-3xl font-bold text-brand-600">96%</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Would Recommend</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <p class="text-3xl font-bold text-brand-600">#1</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Restaurant in Downtown</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED REVIEW ==================== -->
+    <section class="bg-brand-50 dark:bg-slate-900 py-12">
+      <div class="container max-w-4xl text-center">
+        <svg class="w-12 h-12 mx-auto text-brand-300" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <blockquote class="mt-6 text-xl md:text-2xl text-slate-700 dark:text-slate-200 font-display italic leading-relaxed">
+          "We booked the private room for our anniversary dinner, and the team went above and beyond. The lamb shank was incredible, the ambiance was perfect, and Chef Ahmad came out to personally check on us. This is our go-to restaurant for every occasion."
+        </blockquote>
+        <div class="mt-6">
+          <img src="https://placehold.co/80x80/f97316/fff?text=SK" alt="Sarah K." class="w-16 h-16 rounded-full mx-auto border-4 border-white dark:border-slate-800 shadow">
+          <p class="mt-3 font-semibold dark:text-white">Sarah & Khaled M.</p>
+          <p class="text-sm text-slate-500">Anniversary Dinner — December 2025</p>
+          <div class="flex justify-center mt-2 text-yellow-400">★★★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS GRID ==================== -->
+    <section class="container max-w-7xl py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Review 1 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/ea580c/fff?text=AM" alt="Ahmad M." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Ahmad M.</p>
+              <p class="text-xs text-slate-400">Dine-in — January 2026</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"Best burger in the city, hands down. The Truffle Wagyu was juicy and perfectly seasoned. Service was fast and friendly. Will definitely be back."</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/f97316/fff?text=LN" alt="Lina N." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Lina N.</p>
+              <p class="text-xs text-slate-400">Delivery via Talabat — Dec 2025</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★☆</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"Ordered the Mediterranean Platter and Grilled Salmon. Both arrived hot and well-packed. Only minor issue was a 10-minute delay, but the food quality made up for it."</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/c2410c/fff?text=OT" alt="Omar T." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Omar T.</p>
+              <p class="text-xs text-slate-400">Private Event — Nov 2025</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"Hosted my company's year-end dinner here for 45 people. The private dining setup was great, the food was outstanding, and the events team handled everything smoothly."</p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/fb923c/fff?text=RS" alt="Rania S." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Rania S.</p>
+              <p class="text-xs text-slate-400">Takeout — January 2026</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"I'm vegan and it's usually hard to find good options. CraveKitchen has an amazing Roasted Cauliflower Steak and their falafel wraps are next level. So happy I found this place!"</p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/9a3412/fff?text=YH" alt="Yazeed H." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Yazeed H.</p>
+              <p class="text-xs text-slate-400">Dine-in — December 2025</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★☆</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"Great atmosphere and excellent lunch deals. The daily combo at 7 JOD is unbeatable — main dish, side, and a drink. The only downside is it gets pretty busy at noon."</p>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/7c2d12/fff?text=DA" alt="Dana A." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Dana A.</p>
+              <p class="text-xs text-slate-400">Catering — October 2025</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"We hired CraveKitchen to cater our wedding reception for 200 guests. The buffet was stunning, the team was professional, and every guest complimented the food. Couldn't have asked for more!"</p>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/fed7aa/c2410c?text=MK" alt="Mohammad K." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Mohammad K.</p>
+              <p class="text-xs text-slate-400">Dine-in — November 2025</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"Brought my family here for a Friday lunch. The kids loved the chicken tenders and the adults couldn't stop eating the hummus and grilled kebabs. Fair prices, big portions, and clean place."</p>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/ffedd5/ea580c?text=NB" alt="Nour B." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Nour B.</p>
+              <p class="text-xs text-slate-400">Cooking Workshop — Sept 2025</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"Attended the pasta-making workshop and it was so much fun! Chef Marco was patient and funny. We made fresh tagliatelle from scratch and ate it right there. 10/10 experience!"</p>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3">
+            <img src="https://placehold.co/48x48/fdba74/7c2d12?text=HZ" alt="Hala Z." class="w-12 h-12 rounded-full">
+            <div>
+              <p class="font-semibold dark:text-white">Hala Z.</p>
+              <p class="text-xs text-slate-400">Delivery — January 2026</p>
+            </div>
+          </div>
+          <div class="flex mt-3 text-yellow-400 text-sm">★★★★☆</div>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">"The desserts are heavenly! Ordered the chocolate lava cake and kunafa cheesecake — both were fresh and perfectly sweet. Delivery was quick through Uber Eats."</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="bg-slate-50 dark:bg-slate-900 py-12">
+      <div class="container max-w-3xl text-center">
+        <h2 class="text-2xl md:text-3xl font-bold font-display dark:text-white">Enjoyed Your Visit?</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400">We'd love to hear from you! Leave a review on Google or let us know directly.</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-6">
+          <a href="contact.html" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-md hover:bg-brand-700 transition font-medium">
+            Share Your Feedback
+          </a>
+          <a href="index.html#reservation" class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-brand-600 border border-brand-200 dark:border-slate-600 px-6 py-3 rounded-md hover:bg-brand-50 dark:hover:bg-slate-700 transition font-medium">
+            Reserve a Table
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
+          <span class="text-brand-500 text-2xl">🍽</span>
+          <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
+        </a>
+        <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
+          <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="portfolio.html">Gallery</a></li>
+          <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Explore</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="album.html">Photo Album</a></li>
+          <li><a class="hover:text-white transition" href="team.html">Our Team</a></li>
+          <li><a class="hover:text-white transition" href="testimonials.html">Testimonials</a></li>
+          <li><a class="hover:text-white transition" href="faq.html">FAQ</a></li>
+          <li><a class="hover:text-white transition" href="index.html#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Opening Hours</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li class="flex justify-between"><span>Monday - Friday</span><span class="text-white">11am - 11pm</span></li>
+          <li class="flex justify-between"><span>Saturday</span><span class="text-white">10am - 12am</span></li>
+          <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+        <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a class="hover:text-white transition" href="privacy.html">Privacy Policy</a>
+          <a class="hover:text-white transition" href="return-policy.html">Return Policy</a>
+          <a class="hover:text-white transition" href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
