@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" class="">
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,36 +42,16 @@
         <span class="text-brand-600 text-3xl">🍽</span>
         <span class="font-display font-bold dark:text-white">Crave<span class="text-brand-600">Kitchen</span></span>
       </a>
-      <button id="darkToggle" class="md:hidden absolute right-16 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
-        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-      </button>
-      <button class="md:hidden p-2 rounded border border-slate-300 dark:border-slate-600" id="navToggle">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-      <ul class="hidden md:flex items-center gap-6">
+      <ul class="flex flex-wrap items-center gap-5">
         <li><a class="hover:text-brand-600 font-medium" href="index.html">Home</a></li>
         <li><a class="hover:text-brand-600 font-medium" href="about.html">About</a></li>
         <li><a class="hover:text-brand-600 font-medium text-brand-600" href="services.html">Menu</a></li>
+        <li><a class="hover:text-brand-600 font-medium" href="portfolio.html">Gallery</a></li>
         <li><a class="hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
-        <li>
-          <button id="darkToggleDesktop" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle dark mode">
-            <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-            <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          </button>
-        </li>
+        <li><a class="hover:text-brand-600 font-medium" href="contact.html">Contact</a></li>
         <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
       </ul>
     </nav>
-    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
-      <ul class="container py-4 grid gap-3">
-        <li><a class="block py-2 hover:text-brand-600 font-medium" href="index.html">Home</a></li>
-        <li><a class="block py-2 hover:text-brand-600 font-medium" href="about.html">About</a></li>
-        <li><a class="block py-2 hover:text-brand-600 font-medium" href="services.html">Menu</a></li>
-        <li><a class="block py-2 hover:text-brand-600 font-medium" href="blog.html">Blog</a></li>
-        <li><a class="inline-flex items-center rounded-md bg-brand-600 text-white px-5 py-2.5 w-max hover:bg-brand-700 transition font-medium" href="index.html#reservation">Reserve a Table</a></li>
-      </ul>
-    </div>
   </header>
 
   <!-- ==================== BREADCRUMB ==================== -->
@@ -259,7 +239,7 @@
   </main>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-slate-900 text-slate-300 mt-16">
+  <footer class="bg-slate-900 text-slate-300">
     <div class="container max-w-7xl py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
         <a href="index.html" class="flex items-center gap-2 text-xl font-semibold">
@@ -267,12 +247,6 @@
           <span class="font-display font-bold text-white">Crave<span class="text-brand-500">Kitchen</span></span>
         </a>
         <p class="mt-3 text-sm text-slate-400">Fresh food, fast service. Open daily since 2010.</p>
-        <div class="mt-4 flex gap-3">
-          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">fb</a>
-          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">ig</a>
-          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">X</a>
-          <a class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-sm" href="#">yt</a>
-        </div>
       </div>
       <div>
         <h4 class="font-semibold text-white">Quick Links</h4>
@@ -280,7 +254,18 @@
           <li><a class="hover:text-white transition" href="index.html">Home</a></li>
           <li><a class="hover:text-white transition" href="about.html">About Us</a></li>
           <li><a class="hover:text-white transition" href="services.html">Our Menu</a></li>
+          <li><a class="hover:text-white transition" href="portfolio.html">Gallery</a></li>
           <li><a class="hover:text-white transition" href="blog.html">Blog</a></li>
+          <li><a class="hover:text-white transition" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Explore</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white transition" href="album.html">Photo Album</a></li>
+          <li><a class="hover:text-white transition" href="team.html">Our Team</a></li>
+          <li><a class="hover:text-white transition" href="testimonials.html">Testimonials</a></li>
+          <li><a class="hover:text-white transition" href="faq.html">FAQ</a></li>
           <li><a class="hover:text-white transition" href="index.html#reservation">Reservations</a></li>
         </ul>
       </div>
@@ -292,35 +277,18 @@
           <li class="flex justify-between"><span>Sunday</span><span class="text-white">10am - 11pm</span></li>
         </ul>
       </div>
-      <div>
-        <h4 class="font-semibold text-white">Newsletter</h4>
-        <p class="mt-3 text-sm text-slate-400">Subscribe for exclusive offers and new menu announcements.</p>
-        <form class="mt-3 flex gap-2">
-          <input class="min-w-0 flex-1 rounded-md border border-slate-700 bg-slate-800 text-slate-100 placeholder-slate-400 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your email">
-          <button class="px-4 py-2 rounded-md bg-brand-600 text-white hover:bg-brand-700 transition text-sm font-medium">Join</button>
-        </form>
-      </div>
     </div>
     <div class="border-t border-slate-800">
       <div class="container max-w-7xl py-4 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
         <p>&copy; 2026 CraveKitchen. All rights reserved.</p>
         <div class="flex gap-4 mt-2 sm:mt-0">
-          <a class="hover:text-white transition" href="#">Privacy Policy</a>
-          <a class="hover:text-white transition" href="#">Terms of Service</a>
+          <a class="hover:text-white transition" href="privacy.html">Privacy Policy</a>
+          <a class="hover:text-white transition" href="return-policy.html">Return Policy</a>
+          <a class="hover:text-white transition" href="terms.html">Terms & Conditions</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    navToggle.onclick = () => mobileNav.classList.toggle('hidden');
-    function toggleDark() {
-      document.documentElement.classList.toggle('dark');
-      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-    }
-    darkToggle.onclick = toggleDark;
-    darkToggleDesktop.onclick = toggleDark;
-    if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
-  </script>
 </body>
 </html>
